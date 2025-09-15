@@ -6,7 +6,7 @@
 /*   By: anfiorit <anfiorit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 19:54:47 by anfiorit          #+#    #+#             */
-/*   Updated: 2025/09/10 18:17:56 by anfiorit         ###   ########.fr       */
+/*   Updated: 2025/09/15 20:07:08 by anfiorit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,3 @@ void	exit_prob(void)
 	ft_printf("Error\n");
 	exit(1);
 }
-
-
-	
