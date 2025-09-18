@@ -6,7 +6,7 @@
 /*   By: anfiorit <anfiorit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 15:31:18 by anfiorit          #+#    #+#             */
-/*   Updated: 2025/09/18 19:22:16 by anfiorit         ###   ########.fr       */
+/*   Updated: 2025/09/18 19:28:30 by anfiorit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ int	main(int argc, char **argv)
 	free_stack(stack_a, stack_b);
 	return (0);
 }
-
+/*jpense jpeu split, tout foutre dans un tab et appl lalgo de size > 2
+bien eco+*/
 int	main_part_2(int argc, char **argv, int size, t_node **a)
 {
 	int	i;
