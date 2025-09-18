@@ -6,7 +6,7 @@
 /*   By: anfiorit <anfiorit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 16:52:23 by anfiorit          #+#    #+#             */
-/*   Updated: 2025/09/03 13:59:49 by anfiorit         ###   ########.fr       */
+/*   Updated: 2025/09/18 19:02:02 by anfiorit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	exit_prob(void);
 long	ft_atol(const char *str);
 int		ft_strlen(char *str);
 void	push_node(t_node **stack, int value);
-void	is_int_valid(char *buffer, int *size);
+int 	check_argv(char **av, int ac);
 void	free_stack(t_node *stack_a, t_node *stack_b);
 int		value_exists(t_node *head, int n);
 void	push_node_checked(t_node **stack, int n);

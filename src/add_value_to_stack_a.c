@@ -6,7 +6,7 @@
 /*   By: anfiorit <anfiorit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 19:06:35 by anfiorit          #+#    #+#             */
-/*   Updated: 2025/09/03 13:46:05 by anfiorit         ###   ########.fr       */
+/*   Updated: 2025/09/18 19:04:05 by anfiorit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	process_argument(char *buffer, int *size_stack, t_node **stack_a)
 		exit_prob();
 	}
 	value = ft_atol(buffer);
-	push_node_checked(stack_a, value);
+	push_node(stack_a, value);
 	(*size_stack)++;
 }
 
@@ -79,7 +79,9 @@ char	*extract_next_token(char *argv, int *i, int *start, int *j)
 void	push_node(t_node **stack, int value)
 {
 	t_node	*new;
-
+	if (value_exists(*stack, value) == 1)
+		exit_prob();
+	
 	new = malloc(sizeof(t_node));
 	if (!new)
 		exit_prob();
@@ -88,9 +90,3 @@ void	push_node(t_node **stack, int value)
 	*stack = new;
 }
 
-void	push_node_checked(t_node **stack, int x)
-{
-	if (value_exists(*stack, x) == 1)
-		exit_prob();
-	push_node(stack, x);
-}

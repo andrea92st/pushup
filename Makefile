@@ -34,15 +34,15 @@ all:	        $(NAME)
 
 $(NAME):        $(OBJ)
 				@$(CC) $(CFLAGS) $(OBJ) -o $@ -lreadline
-				@echo "\033[1;31m======== project compiled ========\033[0m"
+				@echo "\033[1;92m======== project compiled ========\033[0m"
 
 clean:
 				@rm -rf $(OBJ_DIR)
-				@echo "\033[1;31m======== object files removed ========\033[0m"
+				@echo "\033[1;35m======== object files removed ========\033[0m"
 
 fclean:         clean
 				@$(RM) $(NAME)
-				@echo "\033[1;31m======== executable removed  =======\033[0m"
+				@echo "\033[1;36m======== executable removed  =======\033[0m"
 
 re:             fclean all
 
