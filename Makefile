@@ -2,8 +2,7 @@ NAME     =	push_swap
 
 DIR 	 =  src/
 
-SRC	     =	src/add_value_to_stack_a.c \
-			src/algo_oper.c src/algo_spe.c \
+SRC	     =	src/algo_oper.c src/algo_spe.c \
 			src/algo_utils.c\
 			src/algo.c \
 			src/algo2.c \

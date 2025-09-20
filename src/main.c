@@ -6,7 +6,7 @@
 /*   By: fio <fio@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 15:31:18 by anfiorit          #+#    #+#             */
-/*   Updated: 2025/09/20 13:15:36 by fio              ###   ########.fr       */
+/*   Updated: 2025/09/20 21:57:17 by fio              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ int	main(int argc, char **argv)
 	free_stack(stack_a, stack_b);
 	return (0);
 }
-/*jpense jpeu split, tout foutre dans un tab et appl lalgo de size > 2
-bien eco+*/
+
 int	main_part_2(int argc, char **argv, t_node **a)
 {
 	int	i;
@@ -56,21 +55,38 @@ int	main_part_2(int argc, char **argv, t_node **a)
 int check_argv(char **av, int ac)
 {
 	long	tmp;
-	int	i;
+	int		i;
 	
 	i = 1;
 	while(i < ac)
 	{
 		tmp = ft_atol(av[i]);
-		if(tmp <= INT_MIN || tmp >= INT_MAX)
+		if(check_double(tmp, av, i) == 1)
+			exit_prob();
+		if(tmp < INT_MIN || tmp > INT_MAX)
 			exit_prob();
 		i++;
 	}
 	return (i - 1);
 
 }
+int check_double(long n, char **av, int max)
+{
+	int		i;
+	long	tmp;
 
-char **splitos(char *arg)
+	i = 1;
+	while(i < max)
+	{
+		tmp = ft_atol(av[i]);
+		if (n == tmp)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+char **split_check(char *arg)
 {
 	char	**tab;
 	int		i;
@@ -81,7 +97,7 @@ char **splitos(char *arg)
 	while (tab[i])
 	{
 		tmp = ft_atol(tab[i]);
-		if(tmp <= INT_MIN || tmp >= INT_MAX)
+		if(tmp < INT_MIN || tmp > INT_MAX)
 		{
 			free_tab(tab);
 			exit_prob();
@@ -98,7 +114,7 @@ int arg_is_2(char *arg, t_node **a)
 	int		size;
 
 	i = 0;
-	tab = splitos(arg);
+	tab = split_check(arg);
 	while(tab[i])
 		i++;
 	size = i;

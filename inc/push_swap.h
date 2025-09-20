@@ -6,7 +6,7 @@
 /*   By: fio <fio@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 16:52:23 by anfiorit          #+#    #+#             */
-/*   Updated: 2025/09/20 13:37:56 by fio              ###   ########.fr       */
+/*   Updated: 2025/09/20 21:56:55 by fio              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ int		is_buffer_digit(char *buffer);
 char    **ft_split(char *str);
 int		arg_is_2(char *arg, t_node **a);
 void	free_tab(char **tab);
+int		check_double(long n, char **av, int max);
 
 
 void	sa(t_node **a);
