@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   remap_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anfiorit <anfiorit@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fio <fio@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 15:56:33 by fio               #+#    #+#             */
-/*   Updated: 2025/08/27 16:46:42 by anfiorit         ###   ########.fr       */
+/*   Updated: 2025/09/19 12:07:54 by fio              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	change_stack_val(t_node **a)
 	int	len_max;
 	int	*tab;
 
-	len_max = len_tab(a);
+	len_max = len_stack(a);
 	if (len_max <= 1)
 		return ;
 	tab = malloc (sizeof (int) * len_max);
@@ -41,21 +41,6 @@ void	copy_tab(int *tab, t_node **a)
 		index = index->next;
 		i++;
 	}
-}
-
-int	len_tab(t_node **a)
-{
-	t_node	*tmp;
-	int		len;
-
-	len = 0;
-	tmp = *a;
-	while (tmp)
-	{
-		len++;
-		tmp = tmp->next;
-	}
-	return (len);
 }
 
 void	newval_tab(int *tab, t_node **a, int len)

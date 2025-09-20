@@ -9,8 +9,7 @@ SRC	     =	src/add_value_to_stack_a.c \
 			src/algo2.c \
 			src/check_parsing.c src/free_exit.c src/ft_printf_utils_2.c src/ft_printf_utils.c \
 			src/ft_printf.c src/main.c src/operations_p.c src/operations_s.c src/operations_r.c \
-			src/operations_rr.c src/remap_stack.c src/utils.c 
-
+			src/operations_rr.c src/remap_stack.c src/utils.c src/ft_split.c
 
 CC       =	    cc
 
