@@ -6,7 +6,7 @@
 /*   By: fio <fio@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 15:31:18 by anfiorit          #+#    #+#             */
-/*   Updated: 2025/09/20 21:57:17 by fio              ###   ########.fr       */
+/*   Updated: 2025/09/21 15:01:15 by fio              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int	main_part_2(int argc, char **argv, t_node **a)
 	int	i;
 	int	size;
 
+	if(argv[0] == NULL)
+		exit_prob();
 	i = argc - 1;
 	size = check_argv(argv, argc);
 	while (i > 0)
@@ -61,7 +63,7 @@ int check_argv(char **av, int ac)
 	while(i < ac)
 	{
 		tmp = ft_atol(av[i]);
-		if(check_double(tmp, av, i) == 1)
+		if(check_double(tmp, av, i, 1) == 1)
 			exit_prob();
 		if(tmp < INT_MIN || tmp > INT_MAX)
 			exit_prob();
@@ -70,12 +72,12 @@ int check_argv(char **av, int ac)
 	return (i - 1);
 
 }
-int check_double(long n, char **av, int max)
+int check_double(long n, char **av, int max, int start)
 {
 	int		i;
 	long	tmp;
 
-	i = 1;
+	i = start;
 	while(i < max)
 	{
 		tmp = ft_atol(av[i]);
@@ -96,8 +98,13 @@ char **split_check(char *arg)
 	i = 0;
 	while (tab[i])
 	{
+		if(is_buffer_digit(tab[i]) == 1)
+		{
+			free_tab(tab);
+			exit_prob();	
+		}
 		tmp = ft_atol(tab[i]);
-		if(tmp < INT_MIN || tmp > INT_MAX)
+		if((tmp < INT_MIN || tmp > INT_MAX) || (check_double(tmp, tab, i, 0) == 1))
 		{
 			free_tab(tab);
 			exit_prob();
