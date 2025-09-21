@@ -6,7 +6,7 @@
 /*   By: fio <fio@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 16:18:19 by anfiorit          #+#    #+#             */
-/*   Updated: 2025/09/20 21:16:36 by fio              ###   ########.fr       */
+/*   Updated: 2025/09/21 15:38:24 by fio              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,9 @@ int	is_sorted(t_node *stack)
 	return (0);
 }
 
-int	value_exists(t_node *head, int x)
-{
-	while (head)
-	{
-		if (head->value == x)
-			return (1);
-		head = head->next;
-	}
-	return (0);
-}
-
 void	push_node(t_node **stack, int value)
 {
 	t_node	*new;
-	if (value_exists(*stack, value) == 1)
-		exit_prob();
 	
 	new = malloc(sizeof(t_node));
 	if (!new)

@@ -2,13 +2,24 @@ NAME     =	push_swap
 
 DIR 	 =  src/
 
-SRC	     =	src/algo_oper.c src/algo_spe.c \
-			src/algo_utils.c\
-			src/algo.c \
-			src/algo2.c \
-			src/check_parsing.c src/free_exit.c src/ft_printf_utils_2.c src/ft_printf_utils.c \
-			src/ft_printf.c src/main.c src/operations_p.c src/operations_s.c src/operations_r.c \
-			src/operations_rr.c src/remap_stack.c src/utils.c src/ft_split.c
+SRC	     =	src/algo/algo_oper.c \
+			src/algo/algo_spe.c \
+			src/algo/algo_utils.c \
+			src/algo/algo.c \
+			src/algo/algo2.c \
+			src/check_parsing.c \
+			src/free_exit.c \
+			src/ft_printf/ft_printf_utils_2.c \
+			src/ft_printf/ft_printf_utils.c \
+			src/ft_printf/ft_printf.c \
+			src/main.c \
+			src/operations/operations_p.c \
+			src/operations/operations_s.c \
+			src/operations/operations_r.c \
+			src/operations/operations_rr.c \
+			src/change_val.c \
+			src/utils.c \
+			src/ft_split.c
 
 CC       =	    cc
 

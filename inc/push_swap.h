@@ -6,7 +6,7 @@
 /*   By: fio <fio@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 16:52:23 by anfiorit          #+#    #+#             */
-/*   Updated: 2025/09/21 14:53:07 by fio              ###   ########.fr       */
+/*   Updated: 2025/09/21 15:38:41 by fio              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int		ft_strlen(char *str);
 void	push_node(t_node **stack, int value);
 int 	check_argv(char **av, int ac);
 void	free_stack(t_node *stack_a, t_node *stack_b);
-int		value_exists(t_node *head, int n);
 void	push_node_checked(t_node **stack, int n);
 int		is_digit(char c);
 int		is_symbol(char c);

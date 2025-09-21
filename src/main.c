@@ -6,7 +6,7 @@
 /*   By: fio <fio@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 15:31:18 by anfiorit          #+#    #+#             */
-/*   Updated: 2025/09/21 15:01:15 by fio              ###   ########.fr       */
+/*   Updated: 2025/09/21 15:46:24 by fio              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc == 1)
-		exit_prob();
+		return (0);
 	if (argc == 2)
 		size = arg_is_2(argv[1], &stack_a);
 	else if (argc > 2)
@@ -133,17 +133,4 @@ int arg_is_2(char *arg, t_node **a)
 	}
 	free_tab(tab);
 	return (size);
-}
-
-void free_tab(char **tab)
-{
-	int	i;
-
-	i = 0;
-	while(tab[i])	
-	{
-		free(tab[i]);
-		i++;
-	}
-	free(tab);
 }

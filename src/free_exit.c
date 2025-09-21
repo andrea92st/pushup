@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_exit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anfiorit <anfiorit@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fio <fio@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 19:54:47 by anfiorit          #+#    #+#             */
-/*   Updated: 2025/09/15 20:07:08 by anfiorit         ###   ########.fr       */
+/*   Updated: 2025/09/21 15:51:41 by fio              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,16 @@ void	exit_prob(void)
 {
 	ft_printf("Error\n");
 	exit(1);
+}
+void free_tab(char **tab)
+{
+	int	i;
+
+	i = 0;
+	while(tab[i])	
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
 }
