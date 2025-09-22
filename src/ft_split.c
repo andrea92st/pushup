@@ -6,7 +6,7 @@
 /*   By: fio <fio@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 11:06:38 by fio               #+#    #+#             */
-/*   Updated: 2025/09/21 15:16:41 by fio              ###   ########.fr       */
+/*   Updated: 2025/09/22 14:02:38 by fio              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,9 @@ static int  county(char *s)
         while (s[i] && space(s[i]) == 0)
             i++;
     }
-    return(j);
+    return (j);
 }
+
 static void malok(char **tab, int start, int end, char *s, int x)
 {
     int i;
@@ -56,15 +57,29 @@ static void malok(char **tab, int start, int end, char *s, int x)
 
 char    **ft_split(char *str)
 {
-    int i = 0;
-    int x = 0;
-    int end = 0;
-    int start = 0;
-    int count = county(str);
-    char **tab =  malloc (sizeof (char*) * (count + 1));
+    int     end;
+    int     start;
+    int     count;
+    char    **tab;
+    
+    count = county(str);
+    end = 0;
+    start = 0;
+    tab =  malloc (sizeof (char*) * (count + 1));
     if(tab == NULL)
         return(NULL);
+    ft_split_2(str, start, end, tab);
     tab[count] = NULL;
+    return(tab);
+}
+
+void ft_split_2(char *str, int start, int end, char **tab)
+{
+    int i;
+    int x;
+
+    i = 0;
+    x = 0;
     while (str[i])
     {
         while(str[i] && space(str[i]))
@@ -79,5 +94,4 @@ char    **ft_split(char *str)
             x++;
         }
     }
-    return(tab);
 }

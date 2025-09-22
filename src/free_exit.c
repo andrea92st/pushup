@@ -6,7 +6,7 @@
 /*   By: fio <fio@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 19:54:47 by anfiorit          #+#    #+#             */
-/*   Updated: 2025/09/21 15:51:41 by fio              ###   ########.fr       */
+/*   Updated: 2025/09/22 12:44:46 by fio              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,13 @@ void	exit_prob(void)
 	ft_printf("Error\n");
 	exit(1);
 }
-void free_tab(char **tab)
+
+void	free_tab(char **tab)
 {
 	int	i;
 
 	i = 0;
-	while(tab[i])	
+	while (tab[i])
 	{
 		free(tab[i]);
 		i++;

@@ -6,7 +6,7 @@
 /*   By: fio <fio@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 16:52:23 by anfiorit          #+#    #+#             */
-/*   Updated: 2025/09/21 15:38:41 by fio              ###   ########.fr       */
+/*   Updated: 2025/09/22 13:57:39 by fio              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	exit_prob(void);
 long	ft_atol(const char *str);
 int		ft_strlen(char *str);
 void	push_node(t_node **stack, int value);
-int 	check_argv(char **av, int ac);
+int		check_argv(char **av, int ac);
 void	free_stack(t_node *stack_a, t_node *stack_b);
 void	push_node_checked(t_node **stack, int n);
 int		is_digit(char c);
@@ -70,11 +70,11 @@ void	sort_spec(t_node **a, t_node **b, int size);
 int		main_part_2(int argc, char **argv, t_node **a);
 void	sort_little(t_node **a, t_node **b, int size);
 int		is_buffer_digit(char *buffer);
-char    **ft_split(char *str);
+char	**ft_split(char *str);
 int		arg_is_2(char *arg, t_node **a);
 void	free_tab(char **tab);
 int		check_double(long n, char **av, int max, int start);
-
+void	ft_split_2(char *str, int start, int end, char **tab);
 
 void	sa(t_node **a);
 void	sb(t_node **b);

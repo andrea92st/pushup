@@ -6,7 +6,7 @@
 /*   By: fio <fio@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 15:31:18 by anfiorit          #+#    #+#             */
-/*   Updated: 2025/09/21 15:46:24 by fio              ###   ########.fr       */
+/*   Updated: 2025/09/22 13:03:47 by fio              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main_part_2(int argc, char **argv, t_node **a)
 	int	i;
 	int	size;
 
-	if(argv[0] == NULL)
+	if (argv[0] == NULL)
 		exit_prob();
 	i = argc - 1;
 	size = check_argv(argv, argc);
@@ -54,41 +54,25 @@ int	main_part_2(int argc, char **argv, t_node **a)
 	return (size);
 }
 
-int check_argv(char **av, int ac)
+int	check_argv(char **av, int ac)
 {
 	long	tmp;
 	int		i;
-	
+
 	i = 1;
-	while(i < ac)
+	while (i < ac)
 	{
 		tmp = ft_atol(av[i]);
-		if(check_double(tmp, av, i, 1) == 1)
+		if (check_double(tmp, av, i, 1) == 1)
 			exit_prob();
-		if(tmp < INT_MIN || tmp > INT_MAX)
+		if (tmp < INT_MIN || tmp > INT_MAX)
 			exit_prob();
 		i++;
 	}
 	return (i - 1);
-
-}
-int check_double(long n, char **av, int max, int start)
-{
-	int		i;
-	long	tmp;
-
-	i = start;
-	while(i < max)
-	{
-		tmp = ft_atol(av[i]);
-		if (n == tmp)
-			return (1);
-		i++;
-	}
-	return (0);
 }
 
-char **split_check(char *arg)
+char	**split_check(char *arg)
 {
 	char	**tab;
 	int		i;
@@ -98,23 +82,24 @@ char **split_check(char *arg)
 	i = 0;
 	while (tab[i])
 	{
-		if(is_buffer_digit(tab[i]) == 1)
-		{
-			free_tab(tab);
-			exit_prob();	
-		}
-		tmp = ft_atol(tab[i]);
-		if((tmp < INT_MIN || tmp > INT_MAX) || (check_double(tmp, tab, i, 0) == 1))
+		if (is_buffer_digit(tab[i]) == 1)
 		{
 			free_tab(tab);
 			exit_prob();
 		}
-		i++;	
+		tmp = ft_atol(tab[i]);
+		if ((tmp < INT_MIN || tmp > INT_MAX)
+			|| (check_double(tmp, tab, i, 0) == 1))
+		{
+			free_tab(tab);
+			exit_prob();
+		}
+		i++;
 	}
-	return(tab);
+	return (tab);
 }
 
-int arg_is_2(char *arg, t_node **a)
+int	arg_is_2(char *arg, t_node **a)
 {
 	char	**tab;
 	int		i;
@@ -122,11 +107,11 @@ int arg_is_2(char *arg, t_node **a)
 
 	i = 0;
 	tab = split_check(arg);
-	while(tab[i])
+	while (tab[i])
 		i++;
 	size = i;
 	i -= 1;
-	while(i >= 0)
+	while (i >= 0)
 	{
 		push_node(a, ft_atol(tab[i]));
 		i--;

@@ -6,7 +6,7 @@
 /*   By: fio <fio@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 15:56:33 by fio               #+#    #+#             */
-/*   Updated: 2025/09/21 15:32:30 by fio              ###   ########.fr       */
+/*   Updated: 2025/09/22 13:04:27 by fio              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	newval_tab(int *tab, t_node **a, int len)
 
 	count = 0;
 	while (count < len)
-	{	
+	{
 		i = 0;
 		val = 0;
 		while (i < len)

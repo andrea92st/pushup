@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_spe.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anfiorit <anfiorit@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fio <fio@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/17 13:54:21 by fio               #+#    #+#             */
-/*   Updated: 2025/09/02 12:16:51 by anfiorit         ###   ########.fr       */
+/*   Updated: 2025/09/22 13:09:16 by fio              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,22 +57,25 @@ void	sort_spec(t_node **a, t_node **b, int size)
 	int	len;
 
 	i = 0;
-	len = len_stack(a);
 	while (size > 3)
 	{
+		len = len_stack(a);
 		i = find_min_index(*a);
 		if (i <= len / 2)
 			while (i-- > 0)
 				ra(a);
 		else
-			while (i++ < len)
+		{
+			while (i < len)
+			{
 				rra(a);
+				i++;
+			}
+		}
 		pb(a, b);
 		size--;
 	}
 	sort_three(a);
-	while (*b)
-		pa(a, b);
 }
 
 void	sort_little(t_node **a, t_node **b, int size)
@@ -82,5 +85,11 @@ void	sort_little(t_node **a, t_node **b, int size)
 	else if (size == 3)
 		sort_three(a);
 	else if (size == 4 || size == 5)
+	{
 		sort_spec(a, b, size);
+		if ((*b) && (*b)->next && (*b)->value < (*b)->next->value)
+			sb(b);
+		while (*b)
+			pa(a, b);
+	}
 }
